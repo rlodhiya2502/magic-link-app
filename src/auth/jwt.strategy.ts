@@ -8,12 +8,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: 'your-secret-key', // Replace with your actual secret
+      secretOrKey: 'your-secret-key', // TODO: generate dynamic secret key.
       
     });
   }
 
   async validate(payload: any) {
+    // TODO: upon validate, only return non-sensitive information and create an entry in the database to track the user's activity.    
     return { id: payload.id, isAdmin: payload.isAdmin }; // Attach decoded payload to request.user
+
   }
 }

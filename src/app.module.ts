@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    //TODO: replace hard-coded values with environment variables
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',

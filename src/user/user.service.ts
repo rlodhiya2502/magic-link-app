@@ -18,6 +18,7 @@ export class UserService {
 
   async register(email: string): Promise<void> {
     let user = await this.userRepository.findOne({ where: { email } });
+  
     if (!user) {
       user = this.userRepository.create({ email });
       await this.userRepository.save(user);

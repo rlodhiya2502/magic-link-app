@@ -7,7 +7,7 @@ import { JwtStrategy } from './jwt.strategy';
   imports: [
     PassportModule,
     JwtModule.register({
-      secret: 'your-secret-key',
+      secret: 'your-secret-key', //TODO: generate dynamic secret key.
       signOptions: { expiresIn: '1h' },
     }),
   ],

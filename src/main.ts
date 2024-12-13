@@ -6,5 +6,16 @@ dotenv.config();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(process.env.PORT ?? 3000);
+  // Rate limiting
+  // Helmet
+  // CORS
+  // Validation
+  // Logging
+  // Swagger
+  // Authentication
+  // Authorization
+  // Error handling
+  // Testing
+  
 }
 bootstrap();

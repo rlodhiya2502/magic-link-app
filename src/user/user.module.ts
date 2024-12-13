@@ -10,9 +10,10 @@ import { UserController } from './user.controller';
   imports: [
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
-      secret: 'your-secret-key', // Replace with your secret key
+      secret: 'your-secret-key', // TODO: generate dynamic secret key.
       signOptions: { expiresIn: '60s' },
     }),
+    //TODO: replace hard-coded values with environment variables
     MailerModule.forRoot({
       transport: {
         host: 'smtp.example.com',

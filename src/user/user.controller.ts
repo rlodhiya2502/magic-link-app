@@ -16,7 +16,6 @@ export class UserController {
 
   @Post('register')
   async register(@Body('email') email: string): Promise<string> {
-    console.log('Email:', email);
     await this.userService.register(email);
     return 'Magic link sent to your email.';
   }
